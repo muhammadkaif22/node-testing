@@ -7,6 +7,10 @@ app.get("/", (req: Request, res: Response) => {
   res.send("Hello, Azure!");
 });
 
+app.get("/api/v1/ping", (req: Request, res: Response) => {
+  res.send("Apis are live!");
+});
+
 app.listen(port, () => {
   console.log(`App is running on port ${port}`);
 });
