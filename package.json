@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "ts-node src/app.ts",
+    "start": "ts-node src/index.ts",
     "build": "tsc",
-    "serve": "nodemon src/app.ts",
-    "build:prod": "tsc && node dist/app.js"
+    "serve": "nodemon src/index.ts",
+    "build:prod": "tsc && node dist/index.js"
   },
   "author": "",
   "license": "ISC",
