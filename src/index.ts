@@ -1,9 +1,10 @@
-const express = require('express');
+import express, { Request, Response } from "express";
+
 const app = express();
 const port = process.env.PORT || 3000;
 
-app.get('/', (req, res) => {
-  res.send('Hello, Azure!');
+app.get("/", (req: Request, res: Response) => {
+  res.send("Hello, Azure!");
 });
 
 app.listen(port, () => {

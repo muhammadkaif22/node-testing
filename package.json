@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "echo \"No build steps defined.\""
+    "start": "ts-node src/app.ts",
+    "build": "tsc",
+    "serve": "nodemon src/app.ts",
+    "build:prod": "tsc && node dist/app.js"
   },
   "author": "",
   "license": "ISC",
