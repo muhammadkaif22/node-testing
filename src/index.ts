@@ -1,12 +1,16 @@
-import http from "http";
+const express = require("express");
+const app = express();
+const port = process.env.PORT || 3000;
 
-const server = http.createServer((req: any, res: any) => {
-  console.log({ res, req });
-  res.writeHead(200, { "Content-Type": "text/plain" });
-  res.end("Hello, world!");
+app.get("/api", (req: any, res: any) => {
+  res.json({ message: "Hello, API!" });
 });
 
-const port = process.env.PORT || 3000;
-server.listen(port, () => {
-  console.log(`Server listening on port ${port}`);
+// Handle 404 - Not Found
+app.use((req: any, res: any) => {
+  res.status(404).send("Not found");
+});
+
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
 });
