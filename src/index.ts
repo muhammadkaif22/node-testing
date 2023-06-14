@@ -1,16 +1,11 @@
-import express, { Request, Response } from "express";
+import http from "http";
 
-const app = express();
-const port = process.env.PORT || 3000;
-
-app.get("/", (req: Request, res: Response) => {
-  res.send("Hello, Azure!");
+const server = http.createServer((req, res) => {
+  res.writeHead(200, { "Content-Type": "text/plain" });
+  res.end("Hello, world!");
 });
 
-app.get("/api/v1/ping", (req: Request, res: Response) => {
-  res.send("Apis are live!");
-});
-
-app.listen(port, () => {
-  console.log(`App is running on port ${port}`);
+const port = 3000;
+server.listen(port, () => {
+  console.log(`Server listening on port ${port}`);
 });
